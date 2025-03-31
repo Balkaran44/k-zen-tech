@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Zap, 
@@ -48,7 +47,7 @@ const AboutSection = () => {
               At K-Zen, we envision a future where technology seamlessly enhances human potential, enabling businesses to achieve unprecedented innovation and growth. Our mission is to bridge the gap between cutting-edge technology and practical business applications.
             </p>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Founded in 2021, we've quickly established ourselves as pioneers in AI-driven solutions, digital transformation, and technology innovation. We combine technical excellence with strategic insight to deliver solutions that create lasting value.
+              Founded on April 26, 2024, we're quickly establishing ourselves as pioneers in AI-driven solutions, digital transformation, and technology innovation. We combine technical excellence with strategic insight to deliver solutions that create lasting value.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="bg-white dark:bg-gray-800 rounded-lg py-1 px-3 text-sm font-medium text-kzen-600 dark:text-kzen-400 shadow-sm">
