@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -10,8 +10,21 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Check for saved theme preference or use dark by default
+    const savedTheme = localStorage.getItem('darkMode');
+    
+    // If no saved preference, default to dark mode
+    if (savedTheme === null) {
+      localStorage.setItem('darkMode', 'true');
+      document.documentElement.classList.add('dark');
+    } else if (savedTheme === 'true') {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen transition-colors duration-300">
       <Navbar />
       <HeroSection />
       <AboutSection />

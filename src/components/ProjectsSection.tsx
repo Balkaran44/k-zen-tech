@@ -1,10 +1,12 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [visibleProjects, setVisibleProjects] = useState<number[]>([]);
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
   
   const filters = ['all', 'ai', 'cloud', 'data', 'security'];
   
@@ -57,12 +59,39 @@ const ProjectsSection = () => {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          const id = parseInt(entry.target.getAttribute('data-id') || '0');
+          if (entry.isIntersecting) {
+            setVisibleProjects(prev => [...prev, id]);
+          } else {
+            setVisibleProjects(prev => prev.filter(p => p !== id));
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    
+    projectRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+    
+    return () => {
+      projectRefs.current.forEach(ref => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, [filteredProjects]);
+
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900/50 grid-bg">
+    <section id="projects" className="py-20 bg-gray-900 dark:bg-gray-900 grid-bg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our <span className="text-gradient">Projects</span></h2>
-          <p className="text-gray-600 dark:text-gray-300 text-lg">
+          <p className="text-kzen-400 text-sm font-semibold mb-3 uppercase tracking-wider">Our Work</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our <span className="text-gradient">Projects</span></h2>
+          <p className="text-gray-400 text-lg">
             Innovative solutions we've delivered for enterprises across industries
           </p>
         </div>
@@ -72,10 +101,10 @@ const ProjectsSection = () => {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 rounded-full text-sm font-medium capitalize transition-all ${
+              className={`px-4 py-2 rounded-full text-sm font-medium capitalize transition-all duration-300 ${
                 activeFilter === filter 
-                  ? 'bg-kzen-600 text-white shadow-md' 
-                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                  ? 'bg-kzen-600 text-white shadow-lg shadow-kzen-600/30' 
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
               }`}
             >
               {filter === 'all' ? 'All Projects' : filter}
@@ -84,37 +113,45 @@ const ProjectsSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <div 
               key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group"
+              ref={el => projectRefs.current[index] = el}
+              data-id={project.id}
+              className={`bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:shadow-kzen-600/20 transition-all duration-500 group interactive-card ${
+                visibleProjects.includes(project.id) 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="relative overflow-hidden h-48">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="inline-block bg-kzen-600 text-white text-xs font-semibold px-2 py-1 rounded-full uppercase">
+                  <span className="inline-block bg-kzen-600/90 backdrop-blur-sm text-white text-xs font-semibold px-2 py-1 rounded-full uppercase">
                     {project.category}
                   </span>
                 </div>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 group-hover:text-kzen-600 transition-colors duration-200">
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-kzen-400 transition-colors duration-200">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-400 mb-4">
                   {project.description}
                 </p>
                 <a 
                   href="#" 
-                  className="inline-flex items-center text-kzen-600 hover:text-kzen-700 font-medium"
+                  className="inline-flex items-center text-kzen-400 hover:text-kzen-300 font-medium group"
                 >
-                  View Case Study <ArrowRight className="ml-2 h-4 w-4" />
+                  View Case Study 
+                  <ExternalLink className="ml-2 h-4 w-4 transition-all duration-300 group-hover:rotate-45" />
                 </a>
               </div>
             </div>
@@ -125,10 +162,10 @@ const ProjectsSection = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-kzen-600 text-kzen-600 hover:bg-kzen-50 dark:hover:bg-kzen-900/20"
+            className="border-kzen-600 text-kzen-400 hover:bg-kzen-900/20 hover:text-kzen-300 group"
           >
             View All Projects
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Button>
         </div>
       </div>

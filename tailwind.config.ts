@@ -118,16 +118,53 @@ export default {
 						opacity: '0.9',
 						transform: 'scale(1.03)'
 					}
-				}
+				},
+        'float': {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-20px)'
+          }
+        },
+        'pulse-soft': {
+          '0%, 100%': {
+            opacity: '1'
+          },
+          '50%': {
+            opacity: '0.7'
+          }
+        },
+        'rotate-slow': {
+          'from': {
+            transform: 'rotate(0deg)'
+          },
+          'to': {
+            transform: 'rotate(360deg)'
+          }
+        },
+        'glow': {
+          '0%, 100%': {
+            boxShadow: '0 0 5px rgba(120, 85, 252, 0.3), 0 0 20px rgba(120, 85, 252, 0.2)'
+          },
+          '50%': {
+            boxShadow: '0 0 20px rgba(120, 85, 252, 0.6), 0 0 50px rgba(120, 85, 252, 0.4)'
+          }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'slide-in': 'slide-in 0.5s ease-out',
-				'pulse-glow': 'pulse-glow 3s infinite ease-in-out'
+				'pulse-glow': 'pulse-glow 3s infinite ease-in-out',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+        'rotate-slow': 'rotate-slow 20s linear infinite',
+        'glow': 'glow 4s infinite ease-in-out'
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
