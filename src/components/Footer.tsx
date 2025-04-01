@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -10,27 +8,31 @@ const Footer = () => {
       behavior: 'smooth'
     });
   };
-
-  const services = [
-    { id: 1, name: 'AI & Machine Learning' },
-    { id: 2, name: 'Business Intelligence' },
-    { id: 3, name: 'Data Management' },
-    { id: 4, name: 'Cybersecurity' },
-    { id: 5, name: 'Cloud Solutions' },
-    { id: 6, name: 'Custom Development' }
-  ];
-
-  return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+  const services = [{
+    id: 1,
+    name: 'AI & Machine Learning'
+  }, {
+    id: 2,
+    name: 'Business Intelligence'
+  }, {
+    id: 3,
+    name: 'Data Management'
+  }, {
+    id: 4,
+    name: 'Cybersecurity'
+  }, {
+    id: 5,
+    name: 'Cloud Solutions'
+  }, {
+    id: 6,
+    name: 'Custom Development'
+  }];
+  return <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="mb-6 flex items-center">
-              <img 
-                src="/logo.png" 
-                alt="K-ZEN Logo" 
-                className="h-10 w-10 mr-2" 
-              />
+              <img alt="K-ZEN Logo" className="h-10 w-10 mr-2" src="/lovable-uploads/3d4fd8b1-1de0-4e64-86de-003838fd9d9d.png" />
               <Link to="/" className="text-2xl font-bold text-gradient">K-ZEN</Link>
             </div>
             <p className="text-gray-400 mb-2">
@@ -71,32 +73,22 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'About', 'Services', 'Projects', 'Blog', 'Contact'].map((item, index) => (
-                <li key={index}>
-                  <Link 
-                    to={item.toLowerCase() === 'blog' ? '/blog' : `/#${item.toLowerCase()}`}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
+              {['Home', 'About', 'Services', 'Projects', 'Blog', 'Contact'].map((item, index) => <li key={index}>
+                  <Link to={item.toLowerCase() === 'blog' ? '/blog' : `/#${item.toLowerCase()}`} className="text-gray-400 hover:text-white transition-colors">
                     {item}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
           
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.id}>
-                  <Link 
-                    to={`/booking?service=${service.id}`}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
+              {services.map(service => <li key={service.id}>
+                  <Link to={`/booking?service=${service.id}`} className="text-gray-400 hover:text-white transition-colors">
                     {service.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
           
@@ -106,15 +98,8 @@ const Footer = () => {
               Subscribe to our newsletter to get the latest updates and insights.
             </p>
             <form className="flex">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="bg-gray-800 text-white px-4 py-2 rounded-l-md w-full focus:outline-none focus:ring-1 focus:ring-kzen-500"
-              />
-              <button 
-                type="submit" 
-                className="bg-kzen-600 hover:bg-kzen-700 px-4 py-2 rounded-r-md transition-colors"
-              >
+              <input type="email" placeholder="Enter your email" className="bg-gray-800 text-white px-4 py-2 rounded-l-md w-full focus:outline-none focus:ring-1 focus:ring-kzen-500" />
+              <button type="submit" className="bg-kzen-600 hover:bg-kzen-700 px-4 py-2 rounded-r-md transition-colors">
                 Subscribe
               </button>
             </form>
@@ -138,17 +123,11 @@ const Footer = () => {
             </Link>
           </div>
           
-          <button 
-            onClick={scrollToTop}
-            className="fixed bottom-6 right-6 bg-kzen-600 hover:bg-kzen-700 text-white p-3 rounded-full shadow-lg transition-colors"
-            aria-label="Scroll to top"
-          >
+          <button onClick={scrollToTop} className="fixed bottom-6 right-6 bg-kzen-600 hover:bg-kzen-700 text-white p-3 rounded-full shadow-lg transition-colors" aria-label="Scroll to top">
             <ArrowUp className="h-5 w-5" />
           </button>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
