@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const BlogSection = () => {
   const blogPosts = [
@@ -27,6 +28,14 @@ const BlogSection = () => {
       date: 'Apr 10, 2023',
       image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       excerpt: 'Emerging threats and innovative defense strategies shaping the cybersecurity landscape.'
+    },
+    {
+      id: 4,
+      title: 'Human Mapping Technology: The Next Frontier',
+      category: 'Technology',
+      date: 'Jul 05, 2023',
+      image: 'https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      excerpt: 'How human mapping technology is revolutionizing industries from healthcare to urban planning.'
     }
   ];
 
@@ -41,7 +50,7 @@ const BlogSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {blogPosts.slice(0, 3).map((post) => (
             <article 
               key={post.id}
               className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full"
@@ -64,29 +73,29 @@ const BlogSection = () => {
                   {post.date}
                 </div>
                 <h3 className="text-xl font-bold mb-3 hover:text-kzen-600 transition-colors duration-200">
-                  <a href="#">{post.title}</a>
+                  <Link to={`/blog/${post.id}`}>{post.title}</Link>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
                   {post.excerpt}
                 </p>
-                <a 
-                  href="#" 
+                <Link 
+                  to={`/blog/${post.id}`}
                   className="inline-flex items-center text-kzen-600 hover:text-kzen-700 font-medium mt-auto"
                 >
                   Read Article <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                </Link>
               </div>
             </article>
           ))}
         </div>
         
         <div className="mt-12 text-center">
-          <a 
-            href="#" 
+          <Link 
+            to="/blog" 
             className="inline-flex items-center text-kzen-600 hover:text-kzen-700 font-medium text-lg"
           >
             View All Articles <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

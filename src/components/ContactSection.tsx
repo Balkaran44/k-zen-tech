@@ -5,11 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { 
   Mail, 
-  MapPin, 
   Phone,
   Send
 } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import { Link } from 'react-router-dom';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -117,8 +117,8 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-semibold">Email Us</h4>
-                    <a href="mailto:info@kzen.tech" className="text-gray-600 dark:text-gray-300 hover:text-kzen-600 dark:hover:text-kzen-400">
-                      info@kzen.tech
+                    <a href="mailto:kzenbusinesses@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-kzen-600 dark:hover:text-kzen-400">
+                      kzenbusinesses@gmail.com
                     </a>
                   </div>
                 </div>
@@ -129,23 +129,9 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-semibold">Call Us</h4>
-                    <a href="tel:+1-123-456-7890" className="text-gray-600 dark:text-gray-300 hover:text-kzen-600 dark:hover:text-kzen-400">
-                      +1 (123) 456-7890
+                    <a href="tel:+919729921189" className="text-gray-600 dark:text-gray-300 hover:text-kzen-600 dark:hover:text-kzen-400">
+                      +91 9729921189
                     </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-kzen-50 dark:bg-kzen-900/20 rounded-full p-3">
-                    <MapPin className="h-6 w-6 text-kzen-600" />
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold">Visit Us</h4>
-                    <address className="not-italic text-gray-600 dark:text-gray-300">
-                      1234 Innovation Way<br />
-                      Tech Park, CA 94103<br />
-                      United States
-                    </address>
                   </div>
                 </div>
               </div>
@@ -156,12 +142,14 @@ const ContactSection = () => {
               <p className="mb-4">
                 Schedule a free consultation with our experts to discuss your needs and discover how we can help you achieve your goals.
               </p>
-              <Button 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-kzen-600"
-              >
-                Book a Consultation
-              </Button>
+              <Link to="/booking">
+                <Button 
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-kzen-600"
+                >
+                  Book a Consultation
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -9,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/components/ui/use-toast";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useLocation } from 'react-router-dom';
 
 type Service = {
   id: number;
@@ -27,6 +27,7 @@ type TimeSlot = {
 
 const BookingPage = () => {
   const { toast } = useToast();
+  const location = useLocation();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [selectedTime, setSelectedTime] = useState<number | null>(null);
   const [selectedService, setSelectedService] = useState<number | null>(null);
@@ -131,6 +132,19 @@ const BookingPage = () => {
     { id: 9, time: "5:00 PM", available: true }
   ];
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const serviceId = params.get('service');
+    
+    if (serviceId) {
+      const id = parseInt(serviceId);
+      setSelectedService(id);
+      if (services.some(service => service.id === id)) {
+        setBookingStep('datetime');
+      }
+    }
+  }, [location.search]);
+
   const handleServiceSelect = (serviceId: number) => {
     setSelectedService(serviceId);
   };
@@ -161,12 +175,10 @@ const BookingPage = () => {
       }
       setBookingStep('details');
     } else {
-      // Submit booking
       toast({
         title: "Booking Successful!",
         description: "Your consultation has been scheduled. We'll send you a confirmation email shortly.",
       });
-      // Reset form
       setSelectedService(null);
       setSelectedDate(undefined);
       setSelectedTime(null);

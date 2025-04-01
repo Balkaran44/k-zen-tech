@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -10,13 +11,22 @@ const Footer = () => {
     });
   };
 
+  const services = [
+    { id: 1, name: 'AI & Machine Learning' },
+    { id: 2, name: 'Business Intelligence' },
+    { id: 3, name: 'Data Management' },
+    { id: 4, name: 'Cybersecurity' },
+    { id: 5, name: 'Cloud Solutions' },
+    { id: 6, name: 'Custom Development' }
+  ];
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="mb-6">
-              <a href="#" className="text-2xl font-bold text-gradient">K-ZEN</a>
+              <Link to="/" className="text-2xl font-bold text-gradient">K-ZEN</Link>
             </div>
             <p className="text-gray-400 mb-6">
               Redefining possibilities in technology and business solutions through innovation and excellence.
@@ -55,12 +65,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {['Home', 'About', 'Services', 'Projects', 'Blog', 'Contact'].map((item, index) => (
                 <li key={index}>
-                  <a 
-                    href={`#${item.toLowerCase()}`} 
+                  <Link 
+                    to={item.toLowerCase() === 'blog' ? '/blog' : `/#${item.toLowerCase()}`}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -69,21 +79,14 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              {[
-                'AI & Machine Learning', 
-                'Business Intelligence', 
-                'Data Management', 
-                'Cybersecurity',
-                'Cloud Solutions',
-                'Custom Development'
-              ].map((item, index) => (
-                <li key={index}>
-                  <a 
-                    href="#services" 
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link 
+                    to={`/booking?service=${service.id}`}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    {item}
-                  </a>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -116,15 +119,15 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            </Link>
+            <Link to="/sitemap" className="text-gray-400 hover:text-white text-sm transition-colors">
               Sitemap
-            </a>
+            </Link>
           </div>
           
           <button 

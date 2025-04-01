@@ -11,6 +11,7 @@ import {
   ArrowRight,
   MousePointer
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ServicesSection = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
@@ -18,31 +19,37 @@ const ServicesSection = () => {
   
   const services = [
     {
+      id: 1,
       icon: <Cpu className="h-10 w-10 text-kzen-400" />,
       title: "AI & Machine Learning",
       description: "Deploy intelligent algorithms and predictive analytics to automate processes and derive actionable insights from your data."
     },
     {
+      id: 2,
       icon: <BarChart3 className="h-10 w-10 text-kzen-400" />,
       title: "Business Intelligence",
       description: "Transform raw data into strategic insights with our advanced analytics and visualization solutions."
     },
     {
+      id: 3,
       icon: <Database className="h-10 w-10 text-kzen-400" />,
       title: "Data Management",
       description: "Optimize your data architecture with scalable storage, processing, and governance solutions tailored to your needs."
     },
     {
+      id: 4,
       icon: <Shield className="h-10 w-10 text-kzen-400" />,
       title: "Cybersecurity",
       description: "Protect your digital assets with our comprehensive security solutions, from threat detection to compliance management."
     },
     {
+      id: 5,
       icon: <Cloud className="h-10 w-10 text-kzen-400" />,
       title: "Cloud Solutions",
       description: "Accelerate your digital transformation with scalable, secure, and cost-effective cloud infrastructure and applications."
     },
     {
+      id: 6,
       icon: <Code className="h-10 w-10 text-kzen-400" />,
       title: "Custom Development",
       description: "Build bespoke software solutions designed specifically for your unique business challenges and opportunities."
@@ -104,12 +111,12 @@ const ServicesSection = () => {
               <p className="text-gray-400 mb-4">
                 {service.description}
               </p>
-              <a 
-                href="#" 
+              <Link 
+                to={`/booking?service=${service.id}`}
                 className="inline-flex items-center text-kzen-400 hover:text-kzen-300 font-medium animated-border group"
               >
-                Learn more <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                Book this service <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
           ))}
         </div>
@@ -118,13 +125,15 @@ const ServicesSection = () => {
           <p className="text-lg text-gray-400 mb-6 max-w-2xl mx-auto">
             Looking for a custom solution tailored to your specific business needs?
           </p>
-          <Button 
-            size="lg" 
-            className="bg-kzen-600 hover:bg-kzen-700 text-white btn-glow transition-all duration-300 group"
-          >
-            Request Consultation
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Button>
+          <Link to="/booking">
+            <Button 
+              size="lg" 
+              className="bg-kzen-600 hover:bg-kzen-700 text-white btn-glow transition-all duration-300 group"
+            >
+              Request Consultation
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

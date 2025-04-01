@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -48,22 +49,26 @@ const HeroSection = () => {
             </p>
             
             <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              <Button 
-                size="lg" 
-                className="bg-kzen-600 hover:bg-kzen-700 text-white btn-glow transition-all duration-300 transform hover:scale-105 group"
-              >
-                Explore Solutions
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <Link to="/#services">
+                <Button 
+                  size="lg" 
+                  className="bg-kzen-600 hover:bg-kzen-700 text-white btn-glow transition-all duration-300 transform hover:scale-105 group"
+                >
+                  Explore Solutions
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Button>
+              </Link>
               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-kzen-600 text-kzen-400 hover:bg-kzen-900/20 hover:text-kzen-300 group"
-              >
-                Learn More
-                <ExternalLink className="ml-2 h-4 w-4 transition-all duration-300 group-hover:rotate-45" />
-              </Button>
+              <Link to="/blog">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-kzen-600 text-kzen-400 hover:bg-kzen-900/20 hover:text-kzen-300 group"
+                >
+                  Learn More
+                  <ExternalLink className="ml-2 h-4 w-4 transition-all duration-300 group-hover:rotate-45" />
+                </Button>
+              </Link>
             </div>
             
             <div className={`mt-10 flex flex-wrap justify-center lg:justify-start gap-8 transition-all duration-1000 delay-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
