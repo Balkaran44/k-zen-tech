@@ -11,7 +11,8 @@ const BlogSection = () => {
       category: 'Artificial Intelligence',
       date: 'Jun 15, 2023',
       image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-      excerpt: 'Exploring how AI is transforming data analytics and decision-making processes across industries.'
+      excerpt: 'Exploring how AI is transforming data analytics and decision-making processes across industries.',
+      path: '/blog/1'
     },
     {
       id: 2,
@@ -19,7 +20,8 @@ const BlogSection = () => {
       category: 'Cloud Computing',
       date: 'May 28, 2023',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-      excerpt: 'Key considerations and best practices for migrating complex enterprise systems to the cloud.'
+      excerpt: 'Key considerations and best practices for migrating complex enterprise systems to the cloud.',
+      path: '/blog/2'
     },
     {
       id: 3,
@@ -27,7 +29,8 @@ const BlogSection = () => {
       category: 'Security',
       date: 'Apr 10, 2023',
       image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-      excerpt: 'Emerging threats and innovative defense strategies shaping the cybersecurity landscape.'
+      excerpt: 'Emerging threats and innovative defense strategies shaping the cybersecurity landscape.',
+      path: '/blog/3'
     },
     {
       id: 4,
@@ -35,7 +38,8 @@ const BlogSection = () => {
       category: 'Technology',
       date: 'Jul 05, 2023',
       image: 'https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-      excerpt: 'How human mapping technology is revolutionizing industries from healthcare to urban planning.'
+      excerpt: 'How human mapping technology is revolutionizing industries from healthcare to urban planning.',
+      path: '/blog/human-mapping'
     }
   ];
 
@@ -73,13 +77,13 @@ const BlogSection = () => {
                   {post.date}
                 </div>
                 <h3 className="text-xl font-bold mb-3 hover:text-kzen-600 transition-colors duration-200">
-                  <Link to={`/blog/${post.id}`}>{post.title}</Link>
+                  <Link to={post.path}>{post.title}</Link>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
                   {post.excerpt}
                 </p>
                 <Link 
-                  to={`/blog/${post.id}`}
+                  to={post.path}
                   className="inline-flex items-center text-kzen-600 hover:text-kzen-700 font-medium mt-auto"
                 >
                   Read Article <ArrowRight className="ml-2 h-4 w-4" />

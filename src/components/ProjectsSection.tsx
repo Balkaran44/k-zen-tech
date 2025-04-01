@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -146,27 +147,29 @@ const ProjectsSection = () => {
                 <p className="text-gray-400 mb-4">
                   {project.description}
                 </p>
-                <a 
-                  href="#" 
+                <Link 
+                  to={`/projects/${project.id}`}
                   className="inline-flex items-center text-kzen-400 hover:text-kzen-300 font-medium group"
                 >
                   View Case Study 
                   <ExternalLink className="ml-2 h-4 w-4 transition-all duration-300 group-hover:rotate-45" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
         </div>
         
         <div className="mt-12 text-center">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-kzen-600 text-kzen-400 hover:bg-kzen-900/20 hover:text-kzen-300 group"
-          >
-            View All Projects
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Button>
+          <Link to="/projects">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-kzen-600 text-kzen-400 hover:bg-kzen-900/20 hover:text-kzen-300 group"
+            >
+              View All Projects
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
