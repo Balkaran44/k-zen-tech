@@ -25,11 +25,19 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <div className="mb-6">
+            <div className="mb-6 flex items-center">
+              <img 
+                src="/logo.png" 
+                alt="K-ZEN Logo" 
+                className="h-10 w-10 mr-2" 
+              />
               <Link to="/" className="text-2xl font-bold text-gradient">K-ZEN</Link>
             </div>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-2">
               Redefining possibilities in technology and business solutions through innovation and excellence.
+            </p>
+            <p className="text-gray-400 mb-6">
+              <span className="block text-sm opacity-75">(KUNDAN GENERATIONS)</span>
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

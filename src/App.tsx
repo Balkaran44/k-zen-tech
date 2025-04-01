@@ -18,12 +18,16 @@ import HumanMappingArticle from "./pages/BlogArticle/HumanMappingArticle";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+interface AppProps {
+  basename?: string;
+}
+
+const App = ({ basename = '/' }: AppProps) => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<BlogPage />} />

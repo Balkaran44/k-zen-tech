@@ -49,6 +49,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
+              <img 
+                src="/logo.png" 
+                alt="K-ZEN Logo" 
+                className="h-10 w-10 mr-2 transition-all duration-300 hover:scale-105"
+              />
               <span className="text-2xl font-bold bg-gradient-to-r from-kzen-400 to-kzen-600 bg-clip-text text-transparent transition-all duration-300 hover:scale-105">K-ZEN</span>
             </Link>
           </div>
