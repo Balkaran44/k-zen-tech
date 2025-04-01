@@ -140,7 +140,7 @@ const ContactSection = () => {
             <div className="p-6 bg-kzen-600 text-white rounded-xl shadow-lg">
               <h4 className="text-xl font-bold mb-4">Ready to Transform Your Business?</h4>
               <p className="mb-4">
-                Schedule a free consultation with our experts to discuss your needs and discover how we can help you achieve your goals.
+                We're an online-based startup from Sirsa, India, pushing the boundaries of technology. Schedule a free consultation with our experts to discuss your needs.
               </p>
               <Link to="/booking">
                 <Button 

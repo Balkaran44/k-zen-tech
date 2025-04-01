@@ -82,7 +82,7 @@ const ProjectDetail = () => {
       client: 'MediCare Health Systems',
       duration: '10 months',
       completedDate: 'January 2023',
-      challenge: 'A healthcare provider needed a secure, compliant data warehouse solution to store and analyze patient data while meeting strict regulatory requirements. Their existing system couldn't scale to handle the increasing volume of data, and compliance with evolving regulations was becoming increasingly difficult.',
+      challenge: 'A healthcare provider needed a secure, compliant data warehouse solution to store and analyze patient data while meeting strict regulatory requirements. Their existing system couldn\'t scale to handle the increasing volume of data, and compliance with evolving regulations was becoming increasingly difficult.',
       solution: 'We designed DataVault, a HIPAA-compliant data architecture with end-to-end encryption, role-based access control, and advanced analytics capabilities. The solution includes comprehensive audit logging, automated compliance reporting, and a scalable architecture that can handle increasing data volumes. We implemented a data governance framework to ensure ongoing compliance with regulations.',
       approach: [
         'Performed security and compliance assessment of existing systems',
@@ -175,7 +175,7 @@ const ProjectDetail = () => {
       client: 'Global Manufacturing Inc.',
       duration: '11 months',
       completedDate: 'September 2023',
-      challenge: 'A global manufacturer struggled with supply chain inefficiencies, inventory management, and demand forecasting. Their traditional approaches couldn't account for the complexity of global supply networks and increasing market volatility.',
+      challenge: 'A global manufacturer struggled with supply chain inefficiencies, inventory management, and demand forecasting. Their traditional approaches couldn\'t account for the complexity of global supply networks and increasing market volatility.',
       solution: 'We created an Intelligent Supply Chain platform integrating IoT sensors, predictive analytics, and machine learning to optimize every aspect of the supply chain. The system provides end-to-end visibility, predictive maintenance, demand forecasting, and automated inventory optimization to create a resilient and efficient supply network.',
       approach: [
         'Deployed IoT sensors throughout manufacturing and logistics networks',

@@ -49,7 +49,7 @@ const HeroSection = () => {
             </p>
             
             <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              <Link to="/#services">
+              <a href="#services">
                 <Button 
                   size="lg" 
                   className="bg-kzen-600 hover:bg-kzen-700 text-white btn-glow transition-all duration-300 transform hover:scale-105 group"
@@ -57,7 +57,7 @@ const HeroSection = () => {
                   Explore Solutions
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
-              </Link>
+              </a>
               
               <Link to="/blog">
                 <Button 
