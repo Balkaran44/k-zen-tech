@@ -11,6 +11,11 @@ const getBasename = () => {
     return '/';
   }
 
+  // If using a custom domain, use "/"
+  if (window.location.hostname === 'k-zen.tech') {
+    return '/';
+  }
+
   // For GitHub Pages, use the repository name (e.g., "/repository-name")
   const pathname = window.location.pathname;
   const repoName = pathname.split('/')[1]; // Get the first part of the path
