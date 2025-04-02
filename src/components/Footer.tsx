@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -61,9 +62,65 @@ const Footer = () => {
             </div>
           </div>
           
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <ul className="space-y-2">
+              {services.map(service => (
+                <li key={service.id}>
+                  <Link to="/services" className="text-gray-400 hover:text-white transition-colors">
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/projects" className="text-gray-400 hover:text-white transition-colors">
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
           
-          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/sitemap" className="text-gray-400 hover:text-white transition-colors">
+                  Sitemap
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
         
         <div className="col-span-full border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
