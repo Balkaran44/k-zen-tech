@@ -11,14 +11,14 @@ const HumanMappingArticle = () => {
       title: 'Cloud Migration Strategies for Enterprise Applications',
       category: 'Cloud Computing',
       date: 'May 28, 2023',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
     },
     {
       id: 3,
       title: 'Cybersecurity Trends to Watch in 2023',
       category: 'Security',
       date: 'Apr 10, 2023',
-      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
     }
   ];
 
@@ -58,7 +58,7 @@ const HumanMappingArticle = () => {
       
       <div className="mb-10 overflow-hidden rounded-xl">
         <img 
-          src="https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+          src="https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
           alt="Human Mapping Technology" 
           className="w-full h-auto object-cover"
         />
@@ -176,7 +176,7 @@ const HumanMappingArticle = () => {
       <div className="mt-12 flex items-center p-6 bg-gray-100 dark:bg-gray-800 rounded-xl">
         <div className="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
           <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80" 
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80" 
             alt="Anil Sharma" 
             className="w-full h-full object-cover"
           />

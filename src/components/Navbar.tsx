@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -48,27 +50,31 @@ const Navbar = () => {
     name: 'Contact',
     path: '/#contact'
   }];
+
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
-              <img alt="K-ZEN Logo" className="h-10 w-10 mr-2 transition-all duration-300 hover:scale-105" src="/lovable-uploads/b5e05847-c64b-487c-8d95-90fe6a6d1a16.png" />
+              <img 
+                alt="K-ZEN Logo" 
+                className="h-10 w-10 mr-2 transition-all duration-300 hover:scale-105" 
+                src="/lovable-uploads/e95326ab-a805-487f-9756-ce65866aacf9.png" 
+              />
               <span className="text-2xl font-bold bg-gradient-to-r from-kzen-400 to-kzen-600 bg-clip-text text-transparent transition-all duration-300 hover:scale-105">K-ZEN</span>
             </Link>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => {
-            // Determine if it's a hash link (on main page) or a regular route
-            const isHashLink = item.path.includes('#');
-            return isHashLink ? <a key={index} href={item.path} className={`text-gray-300 hover:text-kzen-400 transition-colors duration-200 text-sm font-medium relative ${activeSection === item.name.toLowerCase() ? 'text-kzen-400' : ''}`}>
+              const isHashLink = item.path.includes('#');
+              return isHashLink ? <a key={index} href={item.path} className={`text-gray-300 hover:text-kzen-400 transition-colors duration-200 text-sm font-medium relative ${activeSection === item.name.toLowerCase() ? 'text-kzen-400' : ''}`}>
                   {item.name}
                   {activeSection === item.name.toLowerCase() && <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-kzen-400 rounded-full animate-fade-in"></span>}
                 </a> : <Link key={index} to={item.path} className="text-gray-300 hover:text-kzen-400 transition-colors duration-200 text-sm font-medium">
                   {item.name}
                 </Link>;
-          })}
+            })}
           </nav>
           
           <div className="hidden md:flex items-center space-x-4">
@@ -93,13 +99,13 @@ const Navbar = () => {
       {isMobileMenuOpen && <div className="md:hidden bg-gray-900 shadow-lg animate-fade-in">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item, index) => {
-          const isHashLink = item.path.includes('#');
-          return isHashLink ? <a key={index} href={item.path} className={`block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md ${activeSection === item.name.toLowerCase() ? 'bg-gray-800 text-kzen-400' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+              const isHashLink = item.path.includes('#');
+              return isHashLink ? <a key={index} href={item.path} className={`block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md ${activeSection === item.name.toLowerCase() ? 'bg-gray-800 text-kzen-400' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
                   {item.name}
                 </a> : <Link key={index} to={item.path} className="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>
                   {item.name}
                 </Link>;
-        })}
+            })}
             <div className="pt-2">
               <Link to="/booking" onClick={() => setIsMobileMenuOpen(false)} className="block w-full">
                 <Button variant="default" className="w-full bg-kzen-600 hover:bg-kzen-700 text-white rounded-md">
@@ -111,4 +117,5 @@ const Navbar = () => {
         </div>}
     </header>;
 };
+
 export default Navbar;

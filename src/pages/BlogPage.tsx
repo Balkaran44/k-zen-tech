@@ -28,7 +28,7 @@ const BlogPage = () => {
       date: 'Jun 15, 2023',
       author: 'Dr. Rajiv Kumar',
       readTime: '8 min read',
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       excerpt: 'Exploring how AI is transforming data analytics and decision-making processes across industries.'
     },
     {
@@ -38,7 +38,7 @@ const BlogPage = () => {
       date: 'May 28, 2023',
       author: 'Priya Sharma',
       readTime: '7 min read',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       excerpt: 'Key considerations and best practices for migrating complex enterprise systems to the cloud.'
     },
     {
@@ -48,7 +48,7 @@ const BlogPage = () => {
       date: 'Apr 10, 2023',
       author: 'Vikram Singh',
       readTime: '6 min read',
-      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       excerpt: 'Emerging threats and innovative defense strategies shaping the cybersecurity landscape.'
     },
     {
@@ -58,7 +58,7 @@ const BlogPage = () => {
       date: 'Jul 05, 2023',
       author: 'Anil Sharma',
       readTime: '10 min read',
-      image: 'https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       excerpt: 'How human mapping technology is revolutionizing industries from healthcare to urban planning.'
     },
     {
@@ -68,7 +68,7 @@ const BlogPage = () => {
       date: 'Aug 12, 2023',
       author: 'Meera Patel',
       readTime: '9 min read',
-      image: 'https://images.unsplash.com/photo-1581093458791-9f9c5bdcfea0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1531565637446-32307b194362?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       excerpt: 'How a leading manufacturer reduced downtime by 35% with our AI predictive maintenance solution.'
     },
     {
@@ -78,7 +78,7 @@ const BlogPage = () => {
       date: 'Sep 03, 2023',
       author: 'Rahul Khanna',
       readTime: '7 min read',
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       excerpt: 'Exploring how edge computing is transforming IoT applications with reduced latency and enhanced privacy.'
     },
     {
@@ -88,7 +88,7 @@ const BlogPage = () => {
       date: 'Oct 17, 2023',
       author: 'Sunita Reddy',
       readTime: '8 min read',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       excerpt: 'How we helped a major healthcare provider strengthen their cybersecurity posture and achieve compliance.'
     },
     {
@@ -98,7 +98,7 @@ const BlogPage = () => {
       date: 'Nov 05, 2023',
       author: 'Dr. Amit Roy',
       readTime: '11 min read',
-      image: 'https://images.unsplash.com/photo-1507729650212-124d0ea9c8a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       excerpt: 'Understanding the potential impacts of quantum computing on encryption and security protocols.'
     }
   ];

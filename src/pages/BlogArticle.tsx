@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -14,7 +13,7 @@ const blogData = [
     authorRole: 'Chief Data Scientist',
     date: 'Jun 15, 2023',
     readTime: '8 min read',
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
     content: `
       <p class="lead">Artificial Intelligence is revolutionizing how businesses analyze and leverage their data, creating unprecedented opportunities for growth and efficiency.</p>
       
@@ -86,7 +85,7 @@ const blogData = [
     authorRole: 'Head of Innovation',
     date: 'Jul 05, 2023',
     readTime: '10 min read',
-    image: 'https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+    image: 'https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
     content: `
       <p class="lead">Human mapping technology is emerging as a transformative force across industries, from healthcare to urban planning, revolutionizing how we understand and interact with our physical and social environments.</p>
       
