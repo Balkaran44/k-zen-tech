@@ -10,7 +10,7 @@ const BlogSection = () => {
       title: 'The Future of AI-Driven Business Intelligence',
       category: 'Artificial Intelligence',
       date: 'Jun 15, 2023',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       excerpt: 'Exploring how AI is transforming data analytics and decision-making processes across industries.',
       path: '/blog/1'
     },
@@ -19,7 +19,7 @@ const BlogSection = () => {
       title: 'Cloud Migration Strategies for Enterprise Applications',
       category: 'Cloud Computing',
       date: 'May 28, 2023',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       excerpt: 'Key considerations and best practices for migrating complex enterprise systems to the cloud.',
       path: '/blog/2'
     },
@@ -28,7 +28,7 @@ const BlogSection = () => {
       title: 'Cybersecurity Trends to Watch in 2023',
       category: 'Security',
       date: 'Apr 10, 2023',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       excerpt: 'Emerging threats and innovative defense strategies shaping the cybersecurity landscape.',
       path: '/blog/3'
     },
@@ -37,7 +37,7 @@ const BlogSection = () => {
       title: 'Human Mapping Technology: The Next Frontier',
       category: 'Technology',
       date: 'Jul 05, 2023',
-      image: 'https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+      image: 'https://images.pexels.com/photos/8412432/pexels-photo-8412432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       excerpt: 'How human mapping technology is revolutionizing industries from healthcare to urban planning.',
       path: '/blog/human-mapping'
     }
