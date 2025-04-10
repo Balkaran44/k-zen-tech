@@ -3,12 +3,15 @@ import React, { useCallback } from 'react';
 import Particles from "react-tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ParticlesBackgroundProps {
   className?: string;
 }
 
 const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className }) => {
+  const isMobile = useIsMobile();
+  
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
@@ -44,10 +47,10 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className }) 
             },
             modes: {
               push: {
-                quantity: 4,
+                quantity: 2,
               },
               repulse: {
-                distance: 150,
+                distance: isMobile ? 80 : 150,
                 duration: 0.4,
               },
             },
@@ -58,7 +61,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className }) 
             },
             links: {
               color: "#7855fc",
-              distance: 150,
+              distance: isMobile ? 100 : 150,
               enable: true,
               opacity: 0.3,
               width: 1,
@@ -70,7 +73,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className }) 
                 default: "bounce",
               },
               random: false,
-              speed: 1,
+              speed: isMobile ? 0.6 : 1,
               straight: false,
             },
             number: {
@@ -78,7 +81,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className }) 
                 enable: true,
                 area: 800,
               },
-              value: 60,
+              value: isMobile ? 30 : 60,
             },
             opacity: {
               value: 0.3,
@@ -87,7 +90,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className }) 
               type: "circle",
             },
             size: {
-              value: { min: 1, max: 3 },
+              value: { min: 1, max: isMobile ? 2 : 3 },
             },
           },
           detectRetina: true,

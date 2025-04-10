@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
@@ -58,10 +59,10 @@ const Navbar = () => {
             <Link to="/" className="flex items-center">
               <img 
                 alt="K-ZEN Logo" 
-                className="h-10 w-10 mr-2 transition-all duration-300 hover:scale-105" 
+                className="h-8 w-8 sm:h-10 sm:w-10 mr-2 transition-all duration-300 hover:scale-105" 
                 src="/lovable-uploads/e95326ab-a805-487f-9756-ce65866aacf9.png" 
               />
-              <span className="text-2xl font-bold bg-gradient-to-r from-kzen-400 to-kzen-600 bg-clip-text text-transparent transition-all duration-300 hover:scale-105">K-ZEN</span>
+              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-kzen-400 to-kzen-600 bg-clip-text text-transparent transition-all duration-300 hover:scale-105">K-ZEN</span>
             </Link>
           </div>
           
@@ -88,7 +89,7 @@ const Navbar = () => {
           
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-300 hover:text-white">
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-300 hover:text-white p-2">
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -97,18 +98,18 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       {isMobileMenuOpen && <div className="md:hidden bg-gray-900 shadow-lg animate-fade-in">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-4 pt-2 pb-4 space-y-2 sm:px-3">
             {navItems.map((item, index) => {
               const isHashLink = item.path.includes('#');
-              return isHashLink ? <a key={index} href={item.path} className={`block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md ${activeSection === item.name.toLowerCase() ? 'bg-gray-800 text-kzen-400' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+              return isHashLink ? <a key={index} href={item.path} className={`block px-3 py-3 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md ${activeSection === item.name.toLowerCase() ? 'bg-gray-800 text-kzen-400' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
                   {item.name}
-                </a> : <Link key={index} to={item.path} className="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>
+                </a> : <Link key={index} to={item.path} className="block px-3 py-3 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>
                   {item.name}
                 </Link>;
             })}
-            <div className="pt-2">
+            <div className="pt-2 pb-2">
               <Link to="/booking" onClick={() => setIsMobileMenuOpen(false)} className="block w-full">
-                <Button variant="default" className="w-full bg-kzen-600 hover:bg-kzen-700 text-white rounded-md">
+                <Button variant="default" className="w-full bg-kzen-600 hover:bg-kzen-700 text-white rounded-md py-3">
                   Book a Service
                 </Button>
               </Link>

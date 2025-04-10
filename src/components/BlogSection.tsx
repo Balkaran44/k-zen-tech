@@ -2,8 +2,11 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const BlogSection = () => {
+  const isMobile = useIsMobile();
+  
   const blogPosts = [
     {
       id: 1,
@@ -44,61 +47,61 @@ const BlogSection = () => {
   ];
 
   return (
-    <section id="blog" className="py-20 bg-white dark:bg-gray-900">
+    <section id="blog" className="py-16 md:py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest <span className="text-gradient">Insights</span></h2>
-          <p className="text-gray-600 dark:text-gray-300 text-lg">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">Latest <span className="text-gradient">Insights</span></h2>
+          <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg">
             Expert perspectives on technology trends and innovation
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.slice(0, 3).map((post) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {blogPosts.slice(0, isMobile ? 2 : 3).map((post) => (
             <article 
               key={post.id}
               className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full"
             >
-              <div className="relative overflow-hidden h-48">
+              <div className="relative overflow-hidden h-40 sm:h-48">
                 <img 
                   src={post.image} 
                   alt={post.title} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
-                <div className="absolute top-0 left-0 m-4">
+                <div className="absolute top-0 left-0 m-3 md:m-4">
                   <span className="inline-block bg-kzen-600 text-white text-xs font-semibold px-2 py-1 rounded-md">
                     {post.category}
                   </span>
                 </div>
               </div>
               
-              <div className="p-6 flex-grow flex flex-col">
-                <div className="mb-4 text-sm text-gray-500 dark:text-gray-400">
+              <div className="p-4 sm:p-6 flex-grow flex flex-col">
+                <div className="mb-2 sm:mb-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                   {post.date}
                 </div>
-                <h3 className="text-xl font-bold mb-3 hover:text-kzen-600 transition-colors duration-200">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 hover:text-kzen-600 transition-colors duration-200">
                   <Link to={post.path}>{post.title}</Link>
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 flex-grow">
                   {post.excerpt}
                 </p>
                 <Link 
                   to={post.path}
-                  className="inline-flex items-center text-kzen-600 hover:text-kzen-700 font-medium mt-auto"
+                  className="inline-flex items-center text-kzen-600 hover:text-kzen-700 font-medium mt-auto text-sm sm:text-base"
                 >
-                  Read Article <ArrowRight className="ml-2 h-4 w-4" />
+                  Read Article <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                 </Link>
               </div>
             </article>
           ))}
         </div>
         
-        <div className="mt-12 text-center">
+        <div className="mt-8 sm:mt-12 text-center">
           <Link 
             to="/blog" 
-            className="inline-flex items-center text-kzen-600 hover:text-kzen-700 font-medium text-lg"
+            className="inline-flex items-center text-kzen-600 hover:text-kzen-700 font-medium text-base sm:text-lg"
           >
-            View All Articles <ArrowRight className="ml-2 h-5 w-5" />
+            View All Articles <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
           </Link>
         </div>
       </div>
