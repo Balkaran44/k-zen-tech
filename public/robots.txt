@@ -19,5 +19,8 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Additional keywords crawling
+Disallow: /*?q=
+
 # Sitemap location
 Sitemap: https://k-zen.tech/sitemap.xml

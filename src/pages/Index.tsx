@@ -22,8 +22,15 @@ const Index = () => {
       document.documentElement.classList.add('dark');
     }
 
-    // Set page title for better SEO
-    document.title = "K-ZEN Tech Company | Innovative Technology Solutions";
+    // Set page title and meta description for better SEO
+    document.title = "K-ZEN Tech Company | Innovative AI Technology Solutions";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 
+      'K-ZEN is an innovative tech company founded by Balkaran Singh Purewal, specializing in AI-driven automation, machine learning solutions, and cutting-edge digital platforms.');
+    }
   }, []);
 
   return (
