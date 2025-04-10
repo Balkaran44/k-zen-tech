@@ -42,7 +42,7 @@ const HeroSection = () => {
           
           <div className={`${isMobile ? 'text-left' : 'text-center lg:text-left'}`}>
             <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              Redefining <span className="text-gradient glow-text">Possibilities</span>
+              <span className="text-white">K-ZEN</span> <span className="text-gradient glow-text">Tech Company</span>
             </h1>
             
             <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-kzen-400 mb-4 sm:mb-6 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
@@ -50,7 +50,7 @@ const HeroSection = () => {
             </h2>
             
             <p className={`text-base sm:text-lg md:text-xl text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              K-Zen is an innovative online-based startup pushing boundaries with AI-driven automation and cutting-edge digital solutions.
+              K-ZEN Tech is an innovative technology company pushing boundaries with AI-driven automation and cutting-edge digital solutions for modern businesses.
             </p>
             
             <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
@@ -102,7 +102,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-kzen-600/30 to-blue-500/30 mix-blend-overlay opacity-60 hover:opacity-100 transition-opacity duration-500"></div>
               <img 
                 src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
-                alt="K-Zen Technology Innovation" 
+                alt="K-ZEN Tech Company Innovation" 
                 className="w-full h-auto object-cover rounded-xl transform hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/70 to-transparent"></div>

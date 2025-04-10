@@ -21,6 +21,9 @@ const Index = () => {
     } else if (savedTheme === 'true') {
       document.documentElement.classList.add('dark');
     }
+
+    // Set page title for better SEO
+    document.title = "K-ZEN Tech Company | Innovative Technology Solutions";
   }, []);
 
   return (
