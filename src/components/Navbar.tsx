@@ -60,7 +60,7 @@ const Navbar = () => {
               <img 
                 alt="K-ZEN Logo" 
                 className="h-8 w-8 sm:h-10 sm:w-10 mr-2 transition-all duration-300 hover:scale-105" 
-                src="/lovable-uploads/e95326ab-a805-487f-9756-ce65866aacf9.png" 
+                src="/lovable-uploads/994717e6-9cf8-4826-93bd-588fa3666c5d.png" 
               />
               <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-kzen-400 to-kzen-600 bg-clip-text text-transparent transition-all duration-300 hover:scale-105">K-ZEN</span>
             </Link>

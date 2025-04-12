@@ -19,6 +19,10 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Allow crawling of all image content
+User-agent: Googlebot-Image
+Allow: /lovable-uploads/
+
 # Additional keywords crawling
 Disallow: /*?q=
 
