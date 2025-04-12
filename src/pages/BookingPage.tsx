@@ -1,14 +1,16 @@
+
 import React, { useState, useEffect } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Check, Clock, Cpu, BarChart3, Database, Shield, Cloud, Code } from 'lucide-react';
+import { ArrowRight, Check, Clock, Cpu, BarChart3, Database, Shield, Cloud, Code, Loader2 } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { useToast } from "@/components/ui/use-toast";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useLocation } from 'react-router-dom';
+import { supabase } from "@/integrations/supabase/client";
 
 type Service = {
   id: number;
@@ -32,6 +34,15 @@ const BookingPage = () => {
   const [selectedTime, setSelectedTime] = useState<number | null>(null);
   const [selectedService, setSelectedService] = useState<number | null>(null);
   const [bookingStep, setBookingStep] = useState<'service' | 'datetime' | 'details'>('service');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone: '',
+    company: '',
+    additional_info: ''
+  });
   
   const services: Service[] = [
     {
@@ -153,7 +164,14 @@ const BookingPage = () => {
     setSelectedTime(timeId);
   };
 
-  const handleContinue = () => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  const handleContinue = async () => {
     if (bookingStep === 'service') {
       if (!selectedService) {
         toast({
@@ -175,14 +193,69 @@ const BookingPage = () => {
       }
       setBookingStep('details');
     } else {
-      toast({
-        title: "Booking Successful!",
-        description: "Your consultation has been scheduled. We'll send you a confirmation email shortly.",
-      });
-      setSelectedService(null);
-      setSelectedDate(undefined);
-      setSelectedTime(null);
-      setBookingStep('service');
+      // Form validation
+      if (!formData.first_name || !formData.last_name || !formData.email || !formData.phone) {
+        toast({
+          title: "Missing information",
+          description: "Please fill out all required fields",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      setIsSubmitting(true);
+
+      try {
+        // Get the selected service and time slot
+        const service = services.find(s => s.id === selectedService);
+        const timeSlot = timeSlots.find(t => t.id === selectedTime);
+
+        if (!service || !timeSlot || !selectedDate) {
+          throw new Error("Missing booking information");
+        }
+
+        const bookingData = {
+          service_id: service.id,
+          service_name: service.title,
+          booking_date: selectedDate.toISOString().split('T')[0],
+          booking_time: timeSlot.time,
+          ...formData
+        };
+
+        const { error } = await supabase
+          .from('booking_submissions')
+          .insert([bookingData]);
+
+        if (error) throw error;
+
+        toast({
+          title: "Booking Successful!",
+          description: "Your consultation has been scheduled. We'll send you a confirmation email shortly.",
+        });
+        
+        // Reset form
+        setSelectedService(null);
+        setSelectedDate(undefined);
+        setSelectedTime(null);
+        setBookingStep('service');
+        setFormData({
+          first_name: '',
+          last_name: '',
+          email: '',
+          phone: '',
+          company: '',
+          additional_info: ''
+        });
+      } catch (error) {
+        console.error('Error submitting booking:', error);
+        toast({
+          title: "Something went wrong",
+          description: "We couldn't process your booking. Please try again later.",
+          variant: "destructive",
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -382,6 +455,9 @@ const BookingPage = () => {
                       type="text" 
                       id="first_name"
                       className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-kzen-400"
+                      required
+                      value={formData.first_name}
+                      onChange={handleInputChange}
                     />
                   </div>
                   <div>
@@ -392,6 +468,9 @@ const BookingPage = () => {
                       type="text" 
                       id="last_name"
                       className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-kzen-400"
+                      required
+                      value={formData.last_name}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -405,6 +484,9 @@ const BookingPage = () => {
                       type="email" 
                       id="email"
                       className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-kzen-400"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
                     />
                   </div>
                   <div>
@@ -415,6 +497,9 @@ const BookingPage = () => {
                       type="tel" 
                       id="phone"
                       className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-kzen-400"
+                      required
+                      value={formData.phone}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -427,18 +512,22 @@ const BookingPage = () => {
                     type="text" 
                     id="company"
                     className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-kzen-400"
+                    value={formData.company}
+                    onChange={handleInputChange}
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium mb-2" htmlFor="message">
+                  <label className="block text-sm font-medium mb-2" htmlFor="additional_info">
                     Additional Information
                   </label>
                   <textarea 
-                    id="message"
+                    id="additional_info"
                     rows={4}
                     className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-kzen-400"
                     placeholder="Tell us more about your project or requirements"
+                    value={formData.additional_info}
+                    onChange={handleInputChange}
                   ></textarea>
                 </div>
               </div>
@@ -454,8 +543,16 @@ const BookingPage = () => {
                   onClick={handleContinue} 
                   size="lg"
                   className="bg-kzen-600 hover:bg-kzen-700 text-white"
+                  disabled={isSubmitting}
                 >
-                  Book Consultation
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Processing...
+                    </>
+                  ) : (
+                    "Book Consultation"
+                  )}
                 </Button>
               </div>
             </TabsContent>
