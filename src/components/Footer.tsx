@@ -74,7 +74,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {services.map(service => (
                   <li key={service.id}>
-                    <Link to="/#services" className="text-gray-400 hover:text-white transition-colors">
+                    <Link to={`/booking?service=${service.id}`} className="text-gray-400 hover:text-white transition-colors">
                       {service.name}
                     </Link>
                   </li>
@@ -86,7 +86,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4">Company</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/#about" className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/" onClick={() => setTimeout(() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="text-gray-400 hover:text-white transition-colors">
                     About Us
                   </Link>
                 </li>
@@ -101,7 +101,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/#contact" className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/" onClick={() => setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="text-gray-400 hover:text-white transition-colors">
                     Contact
                   </Link>
                 </li>

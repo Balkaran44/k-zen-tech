@@ -59,7 +59,7 @@ const FooterMobile = ({ services }) => {
                     {services.slice(0, 3).map(service => (
                       <li key={service.id}>
                         <Link 
-                          to={`/#services`}
+                          to={`/booking?service=${service.id}`}
                           className="text-gray-400 hover:text-white transition-colors text-sm block"
                         >
                           {service.name}
@@ -73,7 +73,7 @@ const FooterMobile = ({ services }) => {
                   <h3 className="text-base font-semibold mb-3 text-kzen-400">Company</h3>
                   <ul className="space-y-2">
                     <li>
-                      <Link to="/#about" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                      <Link to="/" onClick={() => setTimeout(() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="text-gray-400 hover:text-white transition-colors text-sm block">
                         About Us
                       </Link>
                     </li>
@@ -88,7 +88,7 @@ const FooterMobile = ({ services }) => {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/#contact" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                      <Link to="/" onClick={() => setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="text-gray-400 hover:text-white transition-colors text-sm block">
                         Contact
                       </Link>
                     </li>
