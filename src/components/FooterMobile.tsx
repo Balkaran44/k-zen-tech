@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, ArrowUp } from 'lucide-react';
+import { Instagram, ArrowUp, Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const FooterMobile = ({ services }) => {
@@ -41,24 +41,27 @@ const FooterMobile = ({ services }) => {
         
         <div>
           <Sheet>
-            <SheetTrigger className="bg-gray-800 text-white px-4 py-2 rounded-md w-full text-left flex items-center justify-between">
+            <SheetTrigger className="bg-gray-800 text-white px-4 py-2 rounded-md w-full text-left flex items-center justify-between hover:bg-gray-700 transition-colors">
               <span>Quick Links</span>
-              <ArrowUp className="h-4 w-4 rotate-45" />
+              <Menu className="h-4 w-4" />
             </SheetTrigger>
-            <SheetContent side="bottom" className="bg-gray-900 text-white">
+            <SheetContent side="bottom" className="bg-gray-900 text-white border-gray-800">
               <SheetHeader>
                 <SheetTitle className="text-white">Navigation</SheetTitle>
                 <SheetDescription className="text-gray-400">
                   Quick access to all pages
                 </SheetDescription>
               </SheetHeader>
-              <div className="grid grid-cols-2 mt-6">
+              <div className="grid grid-cols-2 gap-8 mt-6">
                 <div>
                   <h3 className="text-base font-semibold mb-3 text-kzen-400">Services</h3>
                   <ul className="space-y-2">
                     {services.slice(0, 3).map(service => (
                       <li key={service.id}>
-                        <Link to="/services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                        <Link 
+                          to={`/#services`}
+                          className="text-gray-400 hover:text-white transition-colors text-sm block"
+                        >
                           {service.name}
                         </Link>
                       </li>
@@ -70,18 +73,23 @@ const FooterMobile = ({ services }) => {
                   <h3 className="text-base font-semibold mb-3 text-kzen-400">Company</h3>
                   <ul className="space-y-2">
                     <li>
-                      <Link to="/about" className="text-gray-400 hover:text-white transition-colors text-sm">
+                      <Link to="/#about" className="text-gray-400 hover:text-white transition-colors text-sm block">
                         About Us
                       </Link>
                     </li>
                     <li>
-                      <Link to="/projects" className="text-gray-400 hover:text-white transition-colors text-sm">
+                      <Link to="/projects" className="text-gray-400 hover:text-white transition-colors text-sm block">
                         Projects
                       </Link>
                     </li>
                     <li>
-                      <Link to="/blog" className="text-gray-400 hover:text-white transition-colors text-sm">
+                      <Link to="/blog" className="text-gray-400 hover:text-white transition-colors text-sm block">
                         Blog
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/#contact" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                        Contact
                       </Link>
                     </li>
                   </ul>
@@ -91,13 +99,13 @@ const FooterMobile = ({ services }) => {
               <div className="mt-6">
                 <h3 className="text-base font-semibold mb-3 text-kzen-400">Legal</h3>
                 <div className="grid grid-cols-2 gap-2">
-                  <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors text-sm block">
                     Privacy Policy
                   </Link>
-                  <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors text-sm block">
                     Terms of Service
                   </Link>
-                  <Link to="/sitemap" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link to="/sitemap" className="text-gray-400 hover:text-white transition-colors text-sm block">
                     Sitemap
                   </Link>
                 </div>
