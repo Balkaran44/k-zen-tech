@@ -75,7 +75,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans dark:bg-gray-900;
+    @apply bg-background text-foreground font-sans;
     font-family: 'Inter', sans-serif;
   }
 
@@ -92,7 +92,7 @@
   }
 
   .card-gradient {
-    @apply bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-950 transition-all duration-300;
+    @apply bg-gradient-to-br from-card to-muted dark:from-card dark:to-background transition-all duration-300;
   }
 
   .hero-gradient {
@@ -285,6 +285,6 @@
   }
   
   .glass-effect {
-    @apply bg-white/10 dark:bg-gray-900/30 backdrop-blur border border-white/20 dark:border-gray-700/20;
+    @apply bg-card/10 dark:bg-background/30 backdrop-blur border border-border/20;
   }
 }
