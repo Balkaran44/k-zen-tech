@@ -72,7 +72,7 @@ const Navbar = () => {
               return isHashLink ? <a key={index} href={item.path} className={`text-gray-300 hover:text-kzen-400 transition-colors duration-200 text-sm font-medium relative ${activeSection === item.name.toLowerCase() ? 'text-kzen-400' : ''}`}>
                   {item.name}
                   {activeSection === item.name.toLowerCase() && <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-kzen-400 rounded-full animate-fade-in"></span>}
-                </a> : <Link key={index} to={item.path} className="text-gray-300 hover:text-kzen-400 transition-colors duration-200 text-sm font-medium">
+                </a> : <Link key={index} to={item.path} className="text-gray-300 hover:text-kzen-400 transition-colors duration-200 text-sm font-medium" onClick={() => window.scrollTo(0, 0)}>
                   {item.name}
                 </Link>;
             })}
@@ -80,7 +80,7 @@ const Navbar = () => {
           
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <Link to="/booking">
+            <Link to="/booking" onClick={() => window.scrollTo(0, 0)}>
               <Button variant="default" className="bg-kzen-600 hover:bg-kzen-700 text-white rounded-md transition-transform duration-200 hover:scale-105">
                 Book a Service
               </Button>
@@ -103,12 +103,12 @@ const Navbar = () => {
               const isHashLink = item.path.includes('#');
               return isHashLink ? <a key={index} href={item.path} className={`block px-3 py-3 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md ${activeSection === item.name.toLowerCase() ? 'bg-gray-800 text-kzen-400' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
                   {item.name}
-                </a> : <Link key={index} to={item.path} className="block px-3 py-3 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>
+                </a> : <Link key={index} to={item.path} className="block px-3 py-3 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-kzen-400 rounded-md" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>
                   {item.name}
                 </Link>;
             })}
             <div className="pt-2 pb-2">
-              <Link to="/booking" onClick={() => setIsMobileMenuOpen(false)} className="block w-full">
+              <Link to="/booking" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0, 0); }} className="block w-full">
                 <Button variant="default" className="w-full bg-kzen-600 hover:bg-kzen-700 text-white rounded-md py-3">
                   Book a Service
                 </Button>
