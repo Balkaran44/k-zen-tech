@@ -36,7 +36,7 @@ const Footer = () => {
     name: 'Custom Development'
   }];
 
-  return <footer className="bg-gray-900 text-white pt-12 md:pt-16 pb-8">
+  return <footer className="bg-background text-foreground pt-12 md:pt-16 pb-8 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {isMobile ? (
           <FooterMobile services={services} />
@@ -51,10 +51,10 @@ const Footer = () => {
                 />
                 <Link to="/" className="text-2xl font-bold text-gradient">K-ZEN</Link>
               </div>
-              <p className="text-gray-400 mb-2">
+              <p className="text-muted-foreground mb-2">
                 Redefining possibilities in technology and business solutions through innovation and excellence.
               </p>
-              <p className="text-gray-400 mb-6">
+              <p className="text-muted-foreground mb-6">
                 <span className="block text-sm opacity-75">(KUNDAN GENERATIONS)</span>
               </p>
               <div className="flex space-x-4">
@@ -62,7 +62,7 @@ const Footer = () => {
                   href="https://www.instagram.com/_k_.zen._/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
@@ -77,7 +77,7 @@ const Footer = () => {
                     <Link 
                       to={`/booking?service=${service.id}`} 
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {service.name}
                     </Link>
@@ -90,22 +90,22 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4">Company</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" onClick={() => setTimeout(() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/" onClick={() => setTimeout(() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="text-muted-foreground hover:text-foreground transition-colors">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/projects" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/projects" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-muted-foreground hover:text-foreground transition-colors">
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link to="/blog" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/blog" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-muted-foreground hover:text-foreground transition-colors">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" onClick={() => setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/" onClick={() => setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="text-muted-foreground hover:text-foreground transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -116,17 +116,17 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/privacy-policy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/privacy-policy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-muted-foreground hover:text-foreground transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms-of-service" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/terms-of-service" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-muted-foreground hover:text-foreground transition-colors">
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link to="/sitemap" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/sitemap" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-muted-foreground hover:text-foreground transition-colors">
                     Sitemap
                   </Link>
                 </li>
@@ -135,8 +135,8 @@ const Footer = () => {
           </div>
         )}
         
-        <div className="col-span-full border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-400 text-sm mb-4 md:mb-0 text-center md:text-left">
+        <div className="col-span-full border-t border-border pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-muted-foreground text-sm mb-4 md:mb-0 text-center md:text-left">
             &copy; {new Date().getFullYear()} K-Zen. All rights reserved.
           </div>
           

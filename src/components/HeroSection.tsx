@@ -42,14 +42,14 @@ const HeroSection = () => {
           
           <div className={`${isMobile ? 'text-left' : 'text-center lg:text-left'}`}>
             <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-              <span className="text-white">K-ZEN</span> <span className="text-gradient glow-text">Tech Company</span>
+              <span className="text-foreground">K-ZEN</span> <span className="text-gradient glow-text">Tech Company</span>
             </h1>
             
             <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-kzen-400 mb-4 sm:mb-6 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
               {typedText}<span className="animate-pulse">|</span>
             </h2>
             
-            <p className={`text-base sm:text-lg md:text-xl text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+            <p className={`text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
               K-ZEN Tech is an innovative technology company pushing boundaries with AI-driven automation and cutting-edge digital solutions for modern businesses.
             </p>
             
@@ -79,17 +79,17 @@ const HeroSection = () => {
             <div className={`mt-8 sm:mt-10 flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-8 transition-all duration-1000 delay-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
               <div className="flex items-center interactive-card p-3 rounded-xl">
                 <div className="text-3xl sm:text-4xl font-bold text-kzen-400">98%</div>
-                <div className="ml-2 text-xs sm:text-sm text-gray-400 text-left">Client<br/>Satisfaction</div>
+                <div className="ml-2 text-xs sm:text-sm text-muted-foreground text-left">Client<br/>Satisfaction</div>
               </div>
               
               <div className="flex items-center interactive-card p-3 rounded-xl">
                 <div className="text-3xl sm:text-4xl font-bold text-kzen-400">50+</div>
-                <div className="ml-2 text-xs sm:text-sm text-gray-400 text-left">Enterprise<br/>Solutions</div>
+                <div className="ml-2 text-xs sm:text-sm text-muted-foreground text-left">Enterprise<br/>Solutions</div>
               </div>
               
               <div className="flex items-center interactive-card p-3 rounded-xl">
                 <div className="text-3xl sm:text-4xl font-bold text-kzen-400">24/7</div>
-                <div className="ml-2 text-xs sm:text-sm text-gray-400 text-left">Expert<br/>Support</div>
+                <div className="ml-2 text-xs sm:text-sm text-muted-foreground text-left">Expert<br/>Support</div>
               </div>
             </div>
           </div>

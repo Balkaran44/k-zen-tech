@@ -80,13 +80,13 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gray-950 dark:bg-gray-950">
+    <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <MousePointer className="h-6 w-6 text-kzen-400 mx-auto mb-4 animate-pulse-soft" />
           <p className="text-kzen-400 text-sm font-semibold mb-3 uppercase tracking-wider">Our Expertise</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our <span className="text-gradient">Services</span></h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our <span className="text-gradient">Services</span></h2>
+          <p className="text-muted-foreground text-lg">
             Cutting-edge solutions to transform your business and drive innovation
           </p>
         </div>
@@ -100,15 +100,15 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className={`service-card bg-gray-900 p-8 rounded-xl transition-all duration-500 card-gradient interactive-card hover:shadow-lg hover:shadow-kzen-600/20 border border-gray-800 ${
+              className={`service-card bg-card p-8 rounded-xl transition-all duration-500 card-gradient interactive-card hover:shadow-lg hover:shadow-kzen-600/20 border border-border ${
                 activeCard === index ? 'scale-105 shadow-lg shadow-kzen-600/20 z-10' : 'scale-100'
               }`}
             >
-              <div className="bg-gray-800/50 dark:bg-kzen-900/30 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-kzen-900/50 transition-colors duration-300">
+              <div className="bg-muted/50 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-kzen-900/50 transition-colors duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
-              <p className="text-gray-400 mb-4">
+              <h3 className="text-xl font-semibold mb-3 text-foreground">{service.title}</h3>
+              <p className="text-muted-foreground mb-4">
                 {service.description}
               </p>
               <Link 
@@ -122,7 +122,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-lg text-gray-400 mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Looking for a custom solution tailored to your specific business needs?
           </p>
           <Link to="/booking">
