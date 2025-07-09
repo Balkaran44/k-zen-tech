@@ -149,9 +149,9 @@ const BookingPage = () => {
     
     if (serviceId) {
       const id = parseInt(serviceId);
-      setSelectedService(id);
       if (services.some(service => service.id === id)) {
-        setBookingStep('datetime');
+        setSelectedService(id);
+        // Keep on service selection step, don't auto-advance to datetime
       }
     }
   }, [location.search]);
