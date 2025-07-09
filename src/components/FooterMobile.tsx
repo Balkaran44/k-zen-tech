@@ -79,12 +79,12 @@ const FooterMobile = ({ services }) => {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/projects" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                      <Link to="/projects" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors text-sm block">
                         Projects
                       </Link>
                     </li>
                     <li>
-                      <Link to="/blog" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                      <Link to="/blog" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors text-sm block">
                         Blog
                       </Link>
                     </li>
@@ -100,13 +100,13 @@ const FooterMobile = ({ services }) => {
               <div className="mt-6">
                 <h3 className="text-base font-semibold mb-3 text-kzen-400">Legal</h3>
                 <div className="grid grid-cols-2 gap-2">
-                  <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                  <Link to="/privacy-policy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors text-sm block">
                     Privacy Policy
                   </Link>
-                  <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                  <Link to="/terms-of-service" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors text-sm block">
                     Terms of Service
                   </Link>
-                  <Link to="/sitemap" className="text-gray-400 hover:text-white transition-colors text-sm block">
+                  <Link to="/sitemap" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors text-sm block">
                     Sitemap
                   </Link>
                 </div>

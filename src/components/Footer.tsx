@@ -95,12 +95,12 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/projects" className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/projects" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/blog" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
                     Blog
                   </Link>
                 </li>
@@ -116,17 +116,17 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/privacy-policy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/terms-of-service" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link to="/sitemap" className="text-gray-400 hover:text-white transition-colors">
+                  <Link to="/sitemap" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">
                     Sitemap
                   </Link>
                 </li>
