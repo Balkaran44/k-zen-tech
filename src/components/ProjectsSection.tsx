@@ -87,12 +87,12 @@ const ProjectsSection = () => {
   }, [filteredProjects]);
 
   return (
-    <section id="projects" className="py-20 bg-gray-900 dark:bg-gray-900 grid-bg">
+    <section id="projects" className="py-20 bg-background grid-bg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-kzen-400 text-sm font-semibold mb-3 uppercase tracking-wider">Our Work</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our <span className="text-gradient">Projects</span></h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our <span className="text-gradient">Projects</span></h2>
+          <p className="text-muted-foreground text-lg">
             Innovative solutions we've delivered for enterprises across industries
           </p>
         </div>
@@ -105,7 +105,7 @@ const ProjectsSection = () => {
               className={`px-4 py-2 rounded-full text-sm font-medium capitalize transition-all duration-300 ${
                 activeFilter === filter 
                   ? 'bg-kzen-600 text-white shadow-lg shadow-kzen-600/30' 
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
               }`}
             >
               {filter === 'all' ? 'All Projects' : filter}
@@ -119,7 +119,7 @@ const ProjectsSection = () => {
               key={project.id}
               ref={el => projectRefs.current[index] = el}
               data-id={project.id}
-              className={`bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:shadow-kzen-600/20 transition-all duration-500 group interactive-card ${
+              className={`bg-card rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:shadow-kzen-600/20 transition-all duration-500 group interactive-card border border-border ${
                 visibleProjects.includes(project.id) 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-10'
@@ -141,10 +141,10 @@ const ProjectsSection = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-kzen-400 transition-colors duration-200">
+                <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-kzen-400 transition-colors duration-200">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-4">
+                <p className="text-muted-foreground mb-4">
                   {project.description}
                 </p>
                 <Link 
