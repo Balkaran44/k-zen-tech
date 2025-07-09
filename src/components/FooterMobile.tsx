@@ -60,6 +60,7 @@ const FooterMobile = ({ services }) => {
                       <li key={service.id}>
                         <Link 
                           to={`/booking?service=${service.id}`}
+                          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                           className="text-gray-400 hover:text-white transition-colors text-sm block"
                         >
                           {service.name}

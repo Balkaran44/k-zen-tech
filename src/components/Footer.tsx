@@ -74,7 +74,11 @@ const Footer = () => {
               <ul className="space-y-2">
                 {services.map(service => (
                   <li key={service.id}>
-                    <Link to={`/booking?service=${service.id}`} className="text-gray-400 hover:text-white transition-colors">
+                    <Link 
+                      to={`/booking?service=${service.id}`} 
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
                       {service.name}
                     </Link>
                   </li>
