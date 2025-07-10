@@ -211,7 +211,7 @@ const ContactSection = () => {
               <p className="mb-4">
                 We're an online-based startup from Sirsa, India, pushing the boundaries of technology. Schedule a free consultation with our experts to discuss your needs.
               </p>
-              <Link to="/booking">
+              <Link to="/booking" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <Button 
                   variant="secondary"
                   className="bg-white text-kzen-600 hover:bg-gray-100 border-0"
