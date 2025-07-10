@@ -135,11 +135,10 @@ const Footer = () => {
           </div>
         )}
         
-        {/* Separator line and dark copyright section */}
-        <div className="border-t border-border mt-12"></div>
-        <div className="bg-gray-900 dark:bg-gray-900 text-white py-6 px-6 mt-0">
+        {/* Copyright section */}
+        <div className="border-t border-border pt-8 mt-12">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0 text-center md:text-left">
+            <div className="text-muted-foreground text-sm mb-4 md:mb-0 text-center md:text-left">
               &copy; {new Date().getFullYear()} K-Zen. All rights reserved.
             </div>
             

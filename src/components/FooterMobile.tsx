@@ -116,11 +116,10 @@ const FooterMobile = ({ services }) => {
         </div>
       </div>
       
-      {/* Dark copyright section with separator */}
-      <div className="border-t border-border mb-6"></div>
-      <div className="bg-gray-900 text-white py-6 px-6 rounded-lg">
+      {/* Copyright section */}
+      <div className="border-t border-border pt-6 mt-8">
         <div className="text-center">
-          <div className="text-gray-400 text-sm">
+          <div className="text-muted-foreground text-sm">
             &copy; {new Date().getFullYear()} K-Zen. All rights reserved.
           </div>
         </div>
