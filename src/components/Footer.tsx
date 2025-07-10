@@ -135,19 +135,17 @@ const Footer = () => {
           </div>
         )}
         
-        {/* Dark copyright section with separator */}
-        <div className="col-span-full">
-          <div className="border-t border-border mb-6"></div>
-          <div className="bg-gray-900 text-white py-6 px-6 rounded-lg">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="text-gray-400 text-sm mb-4 md:mb-0 text-center md:text-left">
-                &copy; {new Date().getFullYear()} K-Zen. All rights reserved.
-              </div>
-              
-              <button onClick={scrollToTop} className="fixed bottom-6 right-6 bg-kzen-600 hover:bg-kzen-700 text-white p-2 sm:p-3 rounded-full shadow-lg transition-colors" aria-label="Scroll to top">
-                <ArrowUp className="h-4 w-4 sm:h-5 sm:w-5" />
-              </button>
+        {/* Separator line and dark copyright section */}
+        <div className="border-t border-border mt-12"></div>
+        <div className="bg-gray-900 dark:bg-gray-900 text-white py-6 px-6 mt-0">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-gray-400 text-sm mb-4 md:mb-0 text-center md:text-left">
+              &copy; {new Date().getFullYear()} K-Zen. All rights reserved.
             </div>
+            
+            <button onClick={scrollToTop} className="fixed bottom-6 right-6 bg-kzen-600 hover:bg-kzen-700 text-white p-2 sm:p-3 rounded-full shadow-lg transition-colors" aria-label="Scroll to top">
+              <ArrowUp className="h-4 w-4 sm:h-5 sm:w-5" />
+            </button>
           </div>
         </div>
       </div>

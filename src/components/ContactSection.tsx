@@ -213,8 +213,8 @@ const ContactSection = () => {
               </p>
               <Link to="/booking">
                 <Button 
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-kzen-600"
+                  variant="secondary"
+                  className="bg-white text-kzen-600 hover:bg-gray-100 border-0"
                 >
                   Book a Consultation
                 </Button>
